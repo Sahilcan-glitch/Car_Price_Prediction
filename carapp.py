@@ -4,9 +4,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 import plotly.express as px
 
-# Load the dataset
-file_path = r'C:\Users\NikHIL\Downloads\Car Price.csv'
-car_data = pd.read_csv(file_path)
+# URL to the raw CSV file on GitHub
+file_url = 'https://raw.githubusercontent.com/Sahilcan-glitch/car_price_prediction/main/Car%20Price.csv'
+
+# Load the dataset from the URL
+car_data = pd.read_csv(file_url)
 
 # Encode categorical variables
 car_data = pd.get_dummies(car_data, columns=['Brand', 'Model', 'Fuel', 'Seller_Type', 'Transmission', 'Owner'], drop_first=True)
